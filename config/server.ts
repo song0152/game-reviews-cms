@@ -1,11 +1,7 @@
-module.exports = ({ env }) => ({
-  host: env('HOST', '0.0.0.0'),
-  port: env.int('PORT', 1337),
+export default ({ env }) => ({
   url: env('PUBLIC_URL'),
-  app: { keys: env.array('APP_KEYS') },
-
-  transfer: {
-    token: { salt: env('TRANSFER_TOKEN_SALT') },
+  proxy: true,
+  app: {
+    keys: env.array('APP_KEYS'),
   },
 });
-
